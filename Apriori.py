@@ -40,6 +40,10 @@ def apriori(filename: str, min_support: int) -> list:
 
     count = {}
     datafile = read_txt_to_2d_array(filename)
+    #print(len(datafile))
+    #print("sdfsdf", int(len(datafile) * min_support / 100))
+    min_support = int(len(datafile) * min_support / 100)
+    print("Minimum Support: ", min_support)
 
     for line in datafile:
         for item in line:
@@ -82,7 +86,7 @@ def apriori(filename: str, min_support: int) -> list:
     return(L)
 
 if __name__ == "__main__":
-    print("10%\n", apriori("datafile.txt", 2))
-    print("20%\n", apriori("datafile.txt", 4))
-    print("30%\n", apriori("datafile.txt", 6))
-    print("50%\n", apriori("datafile.txt", 10))
+    print("10%\n", apriori("datafile.txt", 10))
+    print("20%\n", apriori("datafile.txt", 20))
+    print("30%\n", apriori("datafile.txt", 30))
+    print("50%\n", apriori("datafile.txt", 50))
